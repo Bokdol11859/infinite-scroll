@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function useInfiniteScroll(callback: () => void, threshold = 0) {
+export const useInfiniteScroll = (callback: () => void, threshold = 0) => {
   const observerRef = React.useRef<IntersectionObserver | null>(null);
   const lastElementRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -24,4 +24,4 @@ export default function useInfiniteScroll(callback: () => void, threshold = 0) {
   }, [callback, threshold, lastElementRef]);
 
   return lastElementRef;
-}
+};

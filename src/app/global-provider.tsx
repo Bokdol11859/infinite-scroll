@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { useQuery, useMutation, useQueryClient, QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Query } from "@nestjs/common";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {

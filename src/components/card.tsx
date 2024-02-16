@@ -1,14 +1,7 @@
 import { Product } from "@/types/product";
 import Image from "next/image";
 import React from "react";
-import {
-  Card as CardPrimitive,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card as CardPrimitive, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const dummyUrls = [
   "https://i.imgur.com/cSytoSD.jpeg",
