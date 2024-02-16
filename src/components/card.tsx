@@ -31,7 +31,7 @@ export const Card = React.memo(({ data }: CardProps) => {
         <CardDescription>{data.description.substring(0, 60)}</CardDescription>
       </CardHeader>
       <CardContent>
-        <Image src={imageSrc} alt={data.description} width={260} height={260} className="w-full" />
+        <Image src={imageSrc} alt={data.description} width={260} height={260} />
       </CardContent>
     </CardPrimitive>
   );
