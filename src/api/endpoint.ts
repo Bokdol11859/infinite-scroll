@@ -1,14 +1,17 @@
 import { Product } from "@/types/product";
 
-export const getProducts = async (size: number): Promise<Product[]> => {
+export const getProducts = async ({ pageParam }: { pageParam: number }): Promise<Product[]> => {
+  const size = 12;
   try {
     const response = await fetch("/api/products", {
       method: "GET",
     });
     const jsonData = await response.json();
-    const idx = Math.max(Math.floor(Math.random() * jsonData.data.length) - size, 0);
+    const idx = Math.max(Math.floor(Math.random() * jsonData.data.products.length) - size, 0);
 
-    const data = jsonData.data.slice(idx, idx + size);
+    const data = jsonData.data.products.slice(idx, idx + size);
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     return data;
   } catch (e) {

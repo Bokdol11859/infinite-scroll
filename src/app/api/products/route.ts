@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const res = await fetch("https://api.escuelajs.co/api/v1/products");
+    const res = await fetch("https://dummyjson.com/products");
     const data = await res.json();
 
     return Response.json({ data });
