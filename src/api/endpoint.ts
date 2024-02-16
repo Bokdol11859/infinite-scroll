@@ -1,7 +1,7 @@
 import { Product } from "@/types/product";
 
 export const getProducts = async ({ pageParam }: { pageParam: number }): Promise<Product[]> => {
-  const size = 12;
+  const size = 18;
   try {
     const response = await fetch("/api/products", {
       method: "GET",
@@ -11,7 +11,7 @@ export const getProducts = async ({ pageParam }: { pageParam: number }): Promise
 
     const data = jsonData.data.products.slice(idx, idx + size);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 250));
 
     return data;
   } catch (e) {

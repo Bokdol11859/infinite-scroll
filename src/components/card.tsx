@@ -10,13 +10,24 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const dummyUrl = "https://i.imgur.com/cSytoSD.jpeg";
+const dummyUrls = [
+  "https://i.imgur.com/cSytoSD.jpeg",
+  "https://i.imgur.com/QkIa5tT.jpeg",
+  "https://i.imgur.com/BG8J0Fj.jpg",
+  "https://i.imgur.com/1twoaDy.jpeg",
+  "https://i.imgur.com/FDwQgLy.jpeg",
+  "https://i.imgur.com/kg1ZhhH.jpeg",
+];
 
 export interface CardProps {
   data: Product;
 }
 
 export const Card = React.memo(({ data }: CardProps) => {
+  const imageSrc = React.useMemo(() => {
+    return dummyUrls[Math.floor(Math.random() * dummyUrls.length)];
+  }, []);
+
   return (
     <CardPrimitive className="flex flex-col items-center justify-center h-[400px]">
       <CardHeader className="flex flex-col items-start justify-center w-full">
@@ -27,7 +38,7 @@ export const Card = React.memo(({ data }: CardProps) => {
         <CardDescription>{data.description.substring(0, 60)}</CardDescription>
       </CardHeader>
       <CardContent>
-        <Image src={dummyUrl} alt={data.description} width={260} height={260} className="w-full" />
+        <Image src={imageSrc} alt={data.description} width={260} height={260} className="w-full" />
       </CardContent>
     </CardPrimitive>
   );

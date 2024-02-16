@@ -3,7 +3,7 @@ import React from "react";
 import { QUERY_KEYS } from "./query-key-store";
 import { getProducts } from "@/api/endpoint";
 
-const useInfiniteProductQuery = () => {
+export const useInfiniteProductQuery = () => {
   return useInfiniteQuery({
     queryKey: QUERY_KEYS.products.queryKey,
     queryFn: getProducts,
@@ -11,5 +11,3 @@ const useInfiniteProductQuery = () => {
     getNextPageParam: (lastPage, pages, lastPageParam) => lastPageParam + 1,
   });
 };
-
-export default useInfiniteProductQuery;
